@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.do_an.DPattern.FirestoreSingleton;
 import com.example.do_an.R;
 import com.example.do_an.adapter.ThongBaoAdapter;
 import com.example.do_an.model.ThongBaoModel;
@@ -34,6 +35,7 @@ public class ThongbaoActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclethongbao);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        FirebaseFirestore db = FirestoreSingleton.getInstance();
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();
@@ -46,7 +48,7 @@ public class ThongbaoActivity extends AppCompatActivity {
             }
         });
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        //FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("TransactionInfo")
                 .get()
                 .addOnCompleteListener(task -> {

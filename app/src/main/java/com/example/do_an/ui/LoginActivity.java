@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.do_an.DPattern.FirestoreSingleton;
 import com.example.do_an.MainActivity;
 import com.example.do_an.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        FirebaseFirestore db = FirestoreSingleton.getInstance();
         // Khởi tạo đối tượng SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("my_phone", MODE_PRIVATE);
         // Lưu thông tin username vào SharedPreferences
@@ -47,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         edpass = findViewById(R.id.edpass);
         hello.setText("Xin chào, " + phoneNumber);
 
-        db = FirebaseFirestore.getInstance();
+        //db = FirebaseFirestore.getInstance();
         quenPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

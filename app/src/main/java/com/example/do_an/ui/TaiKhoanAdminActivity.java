@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.do_an.DPattern.FirestoreSingleton;
 import com.example.do_an.R;
 import com.example.do_an.adapter.AccountAdapter;
 import com.example.do_an.adapter.ThongBaoAdapter;
@@ -61,6 +62,7 @@ public class TaiKhoanAdminActivity extends AppCompatActivity {
         fetchDataFromFirestore();
     }
     private void fetchDataFromFirestore() {
+        FirebaseFirestore db = FirestoreSingleton.getInstance();
         db.collection("UsersInfo")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
