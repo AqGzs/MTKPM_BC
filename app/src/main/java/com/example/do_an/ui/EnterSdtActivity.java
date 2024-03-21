@@ -90,7 +90,7 @@ public class EnterSdtActivity extends AppCompatActivity {
                                 }
                             } else {
                                 // Xử lý khi truy vấn không thành công
-                                // ...
+
                                 // Error accessing Firestore
                                 Toast.makeText(EnterSdtActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }

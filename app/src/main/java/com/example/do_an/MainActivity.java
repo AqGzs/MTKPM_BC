@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
         actionBar.hide();
         HomeFragment fragment = new HomeFragment();
         loadFragment(fragment);
-//        loadMyCar();
-//        loadLocal();
         mnBottom.setOnItemSelectedListener(getListener());
     }
 
@@ -64,13 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.mnUuDai:
                          break;
-//
                     case R.id.LSGD:
                         loadFragment(new TransHisFragment());
                         break;
-//
-//                    case R.id.mnChat:
-//                        loadFragment(new SettingFragment());
+
                         //break;
                     case R.id.mnViCuaToi:
                         loadFragment(new SettingFragment());
@@ -89,24 +84,5 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
     }
-//    void loadMyCar()
-//    {
-//        if (getIntent().getStringExtra("fragment") != null && getIntent().getStringExtra("fragment").equals("mycar")) {
-//            MyCarFragment myCarFragment = new MyCarFragment();
-//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//            transaction.replace(R.id.main_fragment, myCarFragment);
-//            transaction.commit();
-//            mnBottom.setSelectedItemId(R.id.LSGD);
-//        }
-//    }
-//    void loadLocal()
-//    {
-//        if (getIntent().getStringExtra("fragment2") != null && getIntent().getStringExtra("fragment2").equals("local")) {
-//            LocalFragment localFragment = new LocalFragment();
-//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//            transaction.replace(R.id.main_fragment, localFragment);
-//            transaction.commit();
-//            mnBottom.setSelectedItemId(R.id.mnUuDai);
-//        }
-//    }
+
 }
