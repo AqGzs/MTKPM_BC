@@ -6,7 +6,6 @@ public class FirestoreSingleton {
 
     private FirestoreSingleton() {
     }
-
     public static synchronized FirebaseFirestore getInstance() {
         if (INSTANCE == null) {
             INSTANCE = FirebaseFirestore.getInstance();
